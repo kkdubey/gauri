@@ -15,6 +15,7 @@ import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import history from '../../core/history';
 
 const styles = {
   root: {
@@ -27,46 +28,42 @@ const styles = {
   },
 };
 
-const tilesData = [
+const projectsData = [
   {
+    projectId: 1,
     img: 'nature-600-337.jpg',
     title: 'Breakfast',
     author: 'jill111',
   },
   {
+    projectId: 2,
     img: 'nature-600-337.jpg',
     title: 'Tasty burger',
     author: 'pashminu',
   },
   {
+    projectId: 3,
     img: 'nature-600-337.jpg',
     title: 'Camera',
     author: 'Danson67',
   },
   {
+    projectId: 4,
     img: 'nature-600-337.jpg',
     title: 'Morning',
     author: 'fancycrave1',
   },
   {
+    projectId: 5,
     img: 'nature-600-337.jpg',
     title: 'Hats',
     author: 'Hans',
   },
   {
+    projectId: 6,
     img: 'nature-600-337.jpg',
     title: 'Honey',
     author: 'fancycravel',
-  },
-  {
-    img: 'nature-600-337.jpg',
-    title: 'Vegetables',
-    author: 'jill111',
-  },
-  {
-    img: 'nature-600-337.jpg',
-    title: 'Water plant',
-    author: 'BkrmadtyaKarki',
   },
 ];
 
@@ -79,20 +76,26 @@ class Home extends React.Component {
     })).isRequired,
   };
 
+  handleClick = (project) => {
+    console.log(this);
+    history.push('projects?projectId='+ this.projectId);
+  }
+
   render() {
     return (
       <div className={s.root}>
         <GridList
-          cols={3}
+          cols={2}
           cellHeight={180}
           style={styles.gridList}
         >
           <Subheader>December</Subheader>
-          {tilesData.map((tile) => (
+          {projectsData.map((tile) => (
             <GridTile
+              key={tile.projectId}
               title={tile.title}
               subtitle={<span>by <b>{tile.author}</b></span>}
-              actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+              actionIcon={<IconButton onTouchTap={this.handleClick.bind(this, tile)}><StarBorder color="white" /></IconButton>}
             >
               <img src={tile.img} />
             </GridTile>

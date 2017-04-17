@@ -10,22 +10,24 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Projects.css';
+import history from '../../core/history';
 
 class Projects extends React.Component {
-  // static propTypes = {
-  //   news: PropTypes.arrayOf(PropTypes.shape({
-  //     title: PropTypes.string.isRequired,
-  //     link: PropTypes.string.isRequired,
-  //     content: PropTypes.string,
-  //   })).isRequired,
-  // };
-
+  static propTypes = {
+    children: PropTypes.string.isRequired,
+    // news: PropTypes.arrayOf(PropTypes.shape({
+    //   title: PropTypes.string.isRequired,
+    //   link: PropTypes.string.isRequired,
+    //   content: PropTypes.string,
+    // })).isRequired,
+  };
   render() {
+    console.log(history);
     return (
       <div className={s.root}>
         <div className={s.container}>
-          <h1>Projects</h1>
-          Projects
+          <h1>Projects</h1> 
+          Projects :{history.location.search}
         </div>
       </div>
     );
