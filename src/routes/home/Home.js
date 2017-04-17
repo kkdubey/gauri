@@ -10,6 +10,65 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Home.css';
+import Paper from 'material-ui/Paper';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import Subheader from 'material-ui/Subheader';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  gridList: {
+    overflowY: 'auto',
+  },
+};
+
+const tilesData = [
+  {
+    img: 'nature-600-337.jpg',
+    title: 'Breakfast',
+    author: 'jill111',
+  },
+  {
+    img: 'nature-600-337.jpg',
+    title: 'Tasty burger',
+    author: 'pashminu',
+  },
+  {
+    img: 'nature-600-337.jpg',
+    title: 'Camera',
+    author: 'Danson67',
+  },
+  {
+    img: 'nature-600-337.jpg',
+    title: 'Morning',
+    author: 'fancycrave1',
+  },
+  {
+    img: 'nature-600-337.jpg',
+    title: 'Hats',
+    author: 'Hans',
+  },
+  {
+    img: 'nature-600-337.jpg',
+    title: 'Honey',
+    author: 'fancycravel',
+  },
+  {
+    img: 'nature-600-337.jpg',
+    title: 'Vegetables',
+    author: 'jill111',
+  },
+  {
+    img: 'nature-600-337.jpg',
+    title: 'Water plant',
+    author: 'BkrmadtyaKarki',
+  },
+];
 
 class Home extends React.Component {
   static propTypes = {
@@ -23,19 +82,22 @@ class Home extends React.Component {
   render() {
     return (
       <div className={s.root}>
-        <div className={s.container}>
-          <h1>React.js News</h1>
-          {this.props.news.map(item => (
-            <article key={item.link} className={s.newsItem}>
-              <h1 className={s.newsTitle}><a href={item.link}>{item.title}</a></h1>
-              <div
-                className={s.newsDesc}
-                // eslint-disable-next-line react/no-danger
-                dangerouslySetInnerHTML={{ __html: item.content }}
-              />
-            </article>
+        <GridList
+          cols={3}
+          cellHeight={180}
+          style={styles.gridList}
+        >
+          <Subheader>December</Subheader>
+          {tilesData.map((tile) => (
+            <GridTile
+              title={tile.title}
+              subtitle={<span>by <b>{tile.author}</b></span>}
+              actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+            >
+              <img src={tile.img} />
+            </GridTile>
           ))}
-        </div>
+        </GridList>
       </div>
     );
   }

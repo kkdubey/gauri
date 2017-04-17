@@ -15,6 +15,11 @@ import Feedback from '../Feedback';
 import Footer from '../Footer';
 import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Paper from 'material-ui/Paper';
+
+const style = {
+  margin: 5,
+};
 
 class Layout extends React.Component {
   static propTypes = {
@@ -26,7 +31,9 @@ class Layout extends React.Component {
       <MuiThemeProvider>
         <div>
           <Header />
-            {this.props.children}
+            <Paper style={style} zDepth={5} >
+              {this.props.children}
+            </Paper>
           <Feedback />
           <Footer />
         </div>
