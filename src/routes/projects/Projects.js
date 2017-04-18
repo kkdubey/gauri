@@ -27,7 +27,7 @@ class Projects extends React.Component {
       <div className={s.root}>
         <div className={s.container}>
           <h1>Projects</h1> 
-          Projects :{history.location.search}
+          Projects :{history.location.search.split('=')[0].substring(1)} - {history.location.search.split('=')[1]}
         </div>
       </div>
     );

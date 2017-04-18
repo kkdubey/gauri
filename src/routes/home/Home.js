@@ -77,8 +77,7 @@ class Home extends React.Component {
   };
 
   handleClick = (project) => {
-    console.log(this);
-    history.push('projects?projectId='+ this.projectId);
+    history.push('projects?projectId='+ project.projectId);
   }
 
   render() {
