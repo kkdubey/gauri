@@ -11,7 +11,11 @@ import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Projects.css';
 import history from '../../core/history';
-
+//import Coverflow from 'react-coverflow';
+//import {StyleRoot} from 'radium';
+var fn = function () {
+  /* do you want */  
+}
 class Projects extends React.Component {
   static propTypes = {
     children: PropTypes.string.isRequired,

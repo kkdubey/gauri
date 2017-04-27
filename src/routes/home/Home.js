@@ -10,62 +10,22 @@
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Home.css';
-import Paper from 'material-ui/Paper';
-import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
 import Subheader from 'material-ui/Subheader';
 import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import history from '../../core/history';
-
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import { Grid, Row, Col } from 'react-bootstrap';
 const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-  },
-  gridList: {
-    overflowY: 'auto',
-  },
+  cardStyle: {
+    width: '400px',
+    height: '600px',
+    float: 'left',
+    margin: '5px',
+    padding: 'auto',
+  }
 };
-
-const projectsData = [
-  {
-    projectId: 1,
-    img: 'nature-600-337.jpg',
-    title: 'Breakfast',
-    author: 'jill111',
-  },
-  {
-    projectId: 2,
-    img: 'nature-600-337.jpg',
-    title: 'Tasty burger',
-    author: 'pashminu',
-  },
-  {
-    projectId: 3,
-    img: 'nature-600-337.jpg',
-    title: 'Camera',
-    author: 'Danson67',
-  },
-  {
-    projectId: 4,
-    img: 'nature-600-337.jpg',
-    title: 'Morning',
-    author: 'fancycrave1',
-  },
-  {
-    projectId: 5,
-    img: 'nature-600-337.jpg',
-    title: 'Hats',
-    author: 'Hans',
-  },
-  {
-    projectId: 6,
-    img: 'nature-600-337.jpg',
-    title: 'Honey',
-    author: 'fancycravel',
-  },
-];
 
 class Home extends React.Component {
   static propTypes = {
@@ -79,27 +39,122 @@ class Home extends React.Component {
   handleClick = (project) => {
     history.push('projects?projectId='+ project.projectId);
   }
-
+  
   render() {
     return (
       <div className={s.root}>
-        <GridList
-          cols={2}
-          cellHeight={180}
-          style={styles.gridList}
-        >
-          <Subheader>December</Subheader>
-          {projectsData.map((tile) => (
-            <GridTile
-              key={tile.projectId}
-              title={tile.title}
-              subtitle={<span>by <b>{tile.author}</b></span>}
-              actionIcon={<IconButton onTouchTap={this.handleClick.bind(this, tile)}><StarBorder color="white" /></IconButton>}
-            >
-              <img src={tile.img} />
-            </GridTile>
-          ))}
-        </GridList>
+        <Grid>
+          <Row className="show-grid">
+            <Col sm={6} md={4}>
+              <Card>
+                <CardHeader
+                  title="URL Avatar"
+                />
+                <CardMedia>
+                  <img src="nature-600-337.jpg" />
+                </CardMedia>
+                <CardText>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                </CardText>
+                <CardActions>
+                  <FlatButton label="View Details" />
+                  <FlatButton label="Action2" />
+                </CardActions>
+              </Card>
+            </Col>
+            <Col sm={6} md={4}>
+              <Card>
+                <CardHeader
+                  title="URL Avatar"
+                />
+                <CardMedia>
+                  <img src="nature-600-337.jpg" />
+                </CardMedia>
+                <CardText>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                </CardText>
+                <CardActions>
+                  <FlatButton label="View Details" />
+                  <FlatButton label="Action2" />
+                </CardActions>
+              </Card>
+            </Col>
+            <Col sm={6} md={4}>
+              <Card>
+                <CardHeader
+                  title="URL Avatar"
+                />
+                <CardMedia>
+                  <img src="nature-600-337.jpg" />
+                </CardMedia>
+                <CardText>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                </CardText>
+                <CardActions>
+                  <FlatButton label="View Details" />
+                  <FlatButton label="Action2" />
+                </CardActions>
+              </Card>
+            </Col>
+            <Col sm={6} md={4}>
+              <Card>
+                <CardHeader
+                  title="URL Avatar"
+                />
+                <CardMedia>
+                  <img src="nature-600-337.jpg" />
+                </CardMedia>
+                <CardText>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                </CardText>
+                <CardActions>
+                  <FlatButton label="View Details" />
+                  <FlatButton label="Action2" />
+                </CardActions>
+              </Card>
+            </Col>
+            <Col sm={6} md={4}>
+              <Card>
+                <CardHeader
+                  title="URL Avatar"
+                />
+                <CardMedia>
+                  <img src="nature-600-337.jpg" />
+                </CardMedia>
+                <CardText>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                </CardText>
+                <CardActions>
+                  <FlatButton label="View Details" />
+                  <FlatButton label="Action2" />
+                </CardActions>
+              </Card>
+            </Col>
+            <Col sm={6} md={4}>
+              <Card>
+                <CardHeader
+                  title="URL Avatar"
+                />
+                <CardMedia>
+                  <img src="nature-600-337.jpg" />
+                </CardMedia>
+                <CardText>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                </CardText>
+                <CardActions>
+                  <FlatButton label="View Details" />
+                  <FlatButton label="Action2" />
+                </CardActions>
+              </Card>
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
