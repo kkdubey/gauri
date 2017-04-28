@@ -17,6 +17,7 @@ import history from '../../core/history';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import { Grid, Row, Col } from 'react-bootstrap';
+
 const styles = {
   cardStyle: {
     width: '400px',
