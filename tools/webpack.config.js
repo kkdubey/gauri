@@ -74,7 +74,8 @@ const config = {
             // https://github.com/babel/babel/tree/master/packages/babel-plugin-transform-react-jsx-self
             ...isDebug ? ['transform-react-jsx-self'] : [],
           ],
-        },
+        }, 
+        options: { esversion: 6, camelcase: true, emitErrors: false, failOnHint: false }
       },
       {
         test: /\.css/,
