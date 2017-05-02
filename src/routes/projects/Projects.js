@@ -28,22 +28,14 @@ const projects = [
 ];
 
 class Projects extends React.Component {
-  static propTypes = {
-    children: PropTypes.string.isRequired,
-    // news: PropTypes.arrayOf(PropTypes.shape({
-    //   title: PropTypes.string.isRequired,
-    //   link: PropTypes.string.isRequired,
-    //   content: PropTypes.string,
-    // })).isRequired,
-    //{history.location.search.split('=')[0].substring(1)} - {history.location.search.split('=')[1]}
-  };
+  
   render() {
     console.log(history);
     return (
       <div className={s.root}>
         <div >
           <h1>Projects</h1> 
-          <Carousel interval="10000000">
+          <Carousel interval={3000}>
             <Carousel.Item  className={s.item}>
               <img alt="900x500" src="img1.jpg" className={s.imgstyle}/>
               <Carousel.Caption>

@@ -15,7 +15,6 @@
 }
 
 .container {
-  background: var(--body-bgcolor) none repeat scroll 0 0;
   width: 100%;
   margin: 0 auto;
   padding: 0 0 40px;

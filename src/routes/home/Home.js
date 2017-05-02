@@ -29,14 +29,7 @@ const styles = {
 };
 
 class Home extends React.Component {
-  static propTypes = {
-    news: PropTypes.arrayOf(PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      link: PropTypes.string.isRequired,
-      content: PropTypes.string,
-    })).isRequired,
-  };
-
+  
   handleClick = (projectId) => {
     console.log(projectId);
     history.push('projects?projectId='+ projectId);
