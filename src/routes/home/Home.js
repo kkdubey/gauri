@@ -37,8 +37,9 @@ class Home extends React.Component {
     })).isRequired,
   };
 
-  handleClick = (project) => {
-    history.push('projects?projectId='+ project.projectId);
+  handleClick = (projectId) => {
+    console.log(projectId);
+    history.push('projects?projectId='+ projectId);
   }
   
   render() {
@@ -47,9 +48,27 @@ class Home extends React.Component {
         <Grid>
           <Row className="show-grid">
             <Col sm={6} md={4}>
-              <Card>
+              <Card className={s.cardStyle}>
                 <CardHeader
-                  title="URL Avatar"
+                  title="Project type 1"
+                />
+                <CardMedia>
+                  <img src="nature-600-337.jpg" />
+                </CardMedia>
+                <CardText>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+                </CardText>
+                <CardActions>
+                  <FlatButton label="View Details" onTouchTap={this.handleClick.bind(this, 12)} />
+                  <FlatButton label="Action2" />
+                </CardActions>
+              </Card>
+            </Col>
+            <Col sm={6} md={4}>
+              <Card className={s.cardStyle}>
+                <CardHeader
+                  title="Project type 2"
                 />
                 <CardMedia>
                   <img src="nature-600-337.jpg" />
@@ -65,9 +84,9 @@ class Home extends React.Component {
               </Card>
             </Col>
             <Col sm={6} md={4}>
-              <Card>
+              <Card className={s.cardStyle}>
                 <CardHeader
-                  title="URL Avatar"
+                  title="Project type 3"
                 />
                 <CardMedia>
                   <img src="nature-600-337.jpg" />
@@ -83,9 +102,9 @@ class Home extends React.Component {
               </Card>
             </Col>
             <Col sm={6} md={4}>
-              <Card>
+              <Card className={s.cardStyle}>
                 <CardHeader
-                  title="URL Avatar"
+                  title="Project type 4"
                 />
                 <CardMedia>
                   <img src="nature-600-337.jpg" />
@@ -101,9 +120,9 @@ class Home extends React.Component {
               </Card>
             </Col>
             <Col sm={6} md={4}>
-              <Card>
+              <Card className={s.cardStyle}>
                 <CardHeader
-                  title="URL Avatar"
+                  title="Project type 5"
                 />
                 <CardMedia>
                   <img src="nature-600-337.jpg" />
@@ -119,27 +138,9 @@ class Home extends React.Component {
               </Card>
             </Col>
             <Col sm={6} md={4}>
-              <Card>
+              <Card className={s.cardStyle}>
                 <CardHeader
-                  title="URL Avatar"
-                />
-                <CardMedia>
-                  <img src="nature-600-337.jpg" />
-                </CardMedia>
-                <CardText>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-                </CardText>
-                <CardActions>
-                  <FlatButton label="View Details" />
-                  <FlatButton label="Action2" />
-                </CardActions>
-              </Card>
-            </Col>
-            <Col sm={6} md={4}>
-              <Card>
-                <CardHeader
-                  title="URL Avatar"
+                  title="Project type 6"
                 />
                 <CardMedia>
                   <img src="nature-600-337.jpg" />
