@@ -27,6 +27,7 @@
     "babel-register": "^6.24.1",
     "babel-template": "^6.24.1",
     "babel-types": "^6.24.1",
+    "browser-sync": "^2.18.8",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.1",
     "classnames": "^2.2.5",
