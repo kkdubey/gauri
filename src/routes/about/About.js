@@ -1,71 +1,90 @@
-/**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
- */
-
 import React, { PropTypes } from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './About.css';
-import history from '../../core/history';
-import { Carousel, Item, Caption} from 'react-bootstrap';
+import s from './about.css';
+import { Grid, Row, Col } from 'react-bootstrap';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import {List, ListItem} from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import Subheader from 'material-ui/Subheader';
+import Avatar from 'material-ui/Avatar';
+import {grey400, darkBlack, lightBlack} from 'material-ui/styles/colors';
+import IconButton from 'material-ui/IconButton';
+import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import IconMenu from 'material-ui/IconMenu';
+import MenuItem from 'material-ui/MenuItem';
 
-var fn = function () {
-  /* do you want */  
-}
+const iconButtonElement = (
+  <IconButton
+    touch={true}
+    tooltip="more"
+    tooltipPosition="bottom-left"
+  >
+    <MoreVertIcon color={grey400} />
+  </IconButton>
+);
 
-const projects = [
-  {
-    imagePath: 'img1.jpg',
-    imageLabel: 'First slide label',
-    imageDetails: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
-    margin: '5px',
-    padding: 'auto',
-  }
-];
+const rightIconMenu = (
+  <IconMenu iconButtonElement={iconButtonElement}>
+    <MenuItem>Reply</MenuItem>
+    <MenuItem>Forward</MenuItem>
+    <MenuItem>Delete</MenuItem>
+  </IconMenu>
+);
 
 class About extends React.Component {
-  static propTypes = {
-    children: PropTypes.string.isRequired,
-    // news: PropTypes.arrayOf(PropTypes.shape({
-    //   title: PropTypes.string.isRequired,
-    //   link: PropTypes.string.isRequired,
-    //   content: PropTypes.string,
-    // })).isRequired,
-    //{history.location.search.split('=')[0].substring(1)} - {history.location.search.split('=')[1]}
-  };
+
   render() {
-    console.log(history);
     return (
       <div className={s.root}>
         <div >
-          <h1>Projects</h1> 
-          <Carousel interval="10000000">
-            <Carousel.Item  className={ s.item }>
-              <img alt="900x500" src="img1.jpg" className={s.imgstyle}/>
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item className={s.item}>
-              <img  alt="900x500" src="img2.jpg" className={s.imgstyle}/>
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item  className={s.item}>
-              <img  alt="900x500" src="img3.jpg" className={s.imgstyle}/>
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
+      	<h1>About Us</h1> 
+        <Grid>
+          <Row >
+            <Col sm={12} md={6}>
+              <img src="nature-600-337.jpg" className={s.img1} />
+            </Col>
+            <Col sm={12} md={6}>
+            	<p>Design Touch was established in year 2013. The firm who handles a interior projects which includes
+            	– Residential , Commercial , Retail spaces , etc. at important centers like Mumbai
+            	, Navi Mumbai , Thane , Pune. We are passionate about our aesthetics ,
+            	functionality and sensuality of using quality materials.
+            		We strongly believe that clients satisfaction is our biggest reward and we
+            	maintain a relationship – be it between a pace and furniture or even a designer
+            	and client. It is a challenge to understand the whims and the choices of every
+            	client and than create a space they can enjoy. This is the reason we give an
+            	individuality to each project we take on…</p>
+            </Col>
+          </Row>
+        </Grid>
+        <List>
+	        <Subheader>Meet Our Team</Subheader>
+	        <ListItem
+	          leftAvatar={<Avatar src="img1.jpg" />}
+	          primaryText="Brunch this weekend?"
+	          secondaryText={
+	            <p>
+	              <span style={{color: darkBlack}}>Brendan Lim</span> --
+	              I&apos;ll be in your neighborhood doing errands this weekend. Do you want to grab brunch?
+	            </p>
+	          }
+	          secondaryTextLines={2}
+	        />
+	        <Divider inset={true} />
+	        <ListItem
+	          leftAvatar={<Avatar src="img2.jpg" />}
+	          primaryText={
+	            <p>Summer BBQ&nbsp;&nbsp;<span style={{color: lightBlack}}>4</span></p>
+	          }
+	          secondaryText={
+	            <p>
+	              <span style={{color: darkBlack}}>to me, Scott, Jennifer</span> --
+	              Wish I could come, but I&apos;m out of town this weekend.
+	            </p>
+	          }
+	          secondaryTextLines={2}
+	        />
+	      </List>
         </div>
       </div>
     );
