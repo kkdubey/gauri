@@ -15,7 +15,7 @@ const title = 'Page Not Found';
 
 export default {
 
-  path: '*',
+  path: '/notFound',
 
   action() {
     return {
