@@ -13,13 +13,34 @@ import s from './Projects.css';
 import history from '../../core/history';
 import { Carousel, Item, Caption} from 'react-bootstrap';
 
-var fn = function () {
-  /* do you want */  
-}
+// var fn = function () {
+//   /* do you want */  
+// }
 
 const projects = [
   {
     imagePath: 'img1.jpg',
+    imageLabel: 'First slide label',
+    imageDetails: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+    margin: '5px',
+    padding: 'auto',
+  },
+  {
+    imagePath: 'img2.jpg',
+    imageLabel: 'First slide label',
+    imageDetails: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+    margin: '5px',
+    padding: 'auto',
+  },
+  {
+    imagePath: 'img3.jpg',
+    imageLabel: 'First slide label',
+    imageDetails: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
+    margin: '5px',
+    padding: 'auto',
+  },
+  {
+    imagePath: 'img4.jpg',
     imageLabel: 'First slide label',
     imageDetails: 'Nulla vitae elit libero, a pharetra augue mollis interdum.',
     margin: '5px',
@@ -36,27 +57,15 @@ class Projects extends React.Component {
         <div >
           <h1>Projects</h1> 
           <Carousel interval={3000}>
-            <Carousel.Item  className={s.item}>
-              <img alt="900x500" src="img1.jpg" className={s.imgstyle}/>
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item className={s.item}>
-              <img  alt="900x500" src="img2.jpg" className={s.imgstyle}/>
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item  className={s.item}>
-              <img  alt="900x500" src="img3.jpg" className={s.imgstyle}/>
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
+            {projects.map((number) =>
+              <Carousel.Item  className={s.item} key={number.imagePath}>
+                <img alt="900x500" src={number.imagePath} className={s.imgstyle}/>
+                <Carousel.Caption>
+                  <h3>First slide label</h3>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            )}
           </Carousel>
         </div>
       </div>

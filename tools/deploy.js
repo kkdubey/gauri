@@ -17,7 +17,7 @@ import run from './run';
 const remote = {
   name: 'github',
   url: 'https://github.com/kkdubey/gauri.git',
-  branch: 'gh-pages',
+  branch: 'rc',
   website: 'https://gauritest.herokuapp.com/',
   static: true,
 };

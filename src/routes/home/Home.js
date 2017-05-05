@@ -31,7 +31,6 @@ const styles = {
 class Home extends React.Component {
   
   handleClick = (projectId) => {
-    console.log(projectId);
     history.push('projects?projectId='+ projectId);
   }
   
